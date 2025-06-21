@@ -35,6 +35,9 @@ jobs:
       - name: Publish Blazor WASM
         run: dotnet publish BlazorWasm/BlazorWasm.csproj -c Release --nologo
 
+      - name: Copy index.html to 404.html for SPA fallback
+        run: cp ${{ env.PUBLISH_DIR }}/index.html ${{ env.PUBLISH_DIR }}/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
