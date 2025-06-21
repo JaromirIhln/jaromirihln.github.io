@@ -21,3 +21,18 @@ copy thys content to the decode.js on web address:
 https://github.com/dotnet/blazor-samples/blob/main/BlazorWebAssemblyXrefGenerator/wwwroot/decode.js
 and create this file in vscode editor - copy decode.js on project wwwwroot folder
 # Setting up GitHub Pages to Github Actions
+On repository - click to settings and find item 'Pages' - change settings of 'Deploy from a branch' to
+'GitHub Actions' and don't choose Jekyll, but choose Static Html and setting this.
+Now a folder .github, workflows will be created and inside there will be static.yml, which also needs to be edited - copy on this repository .github/workflows (otside of project - inside repository)
+ [![Deploy Blazor WASM to GitHub Pages](https://github.com/JaromirIhln/jaromirihln.github.io/actions/workflows/static.yml/badge.svg)](https://github.com/JaromirIhln/jaromirihln.github.io/actions/workflows/static.yml) 
+ # Publish Action passed
+ Your site was last deployed to the github-pages environment by the Deploy Blazor WASM to GitHub Pages workflow.
+ # Summary
+ add decode.js
+ add .nojekyl
+ add .gitattributes(from dotnet CLI)
+ If you don't need redirection - you don't even need to change it
+ ```
+ <base href="/" />  - # this is okay
+```
+I hope I didn't forget anything.😉
