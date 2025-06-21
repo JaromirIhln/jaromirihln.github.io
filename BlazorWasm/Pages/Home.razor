@@ -1,13 +1,15 @@
 ﻿@page "/"
+@inject HttpClient Http
+@using System.Net.Http.Json
 
 <PageTitle>Home</PageTitle>
 
-<h1 class="text-center text-info" tabindex="0">Vítejte ve webové aplikaci Blazor!</h1>
+<h1 class="text-center text-bg-info" tabindex="0">Vítejte ve webové aplikaci Blazor!</h1>
 <h3 class="markdown text-center" tabindex="1">Webová aplikace,a která hostuje a je nasazena na 'GitHub pages' pomocí GitHub Action,</h3>
 <h6 class="markdown text-center" tabindex="2">a načítá razor komponenty včetně C# kódů z repozitáře GitHub.</h6>
 <!--Hero imege an sample of W3S-->
-<div id="h-image" class="hero-image h-50">
-    <img src="~/images/wide_home.webp" class="hero-image opacity-0" tabindex="3" />
+<div id="h-image" class="hero-image h-25" tabindex="3">
+    <img src="/images/wide_home.webp" class="hero-image opacity-0" tabindex="3" />
     <div id="h-text" class="hero-text">
         <h2 class="font-change">Vývoj v ASP.NET Core <span class="fa fa-film"> </span> </h2>
         <p>Architektura pro vývoj multiplatformních aplikací a rozhraní API, MVC &#40;Model-View-Controller&#41; a moderních cloudových aplikací.</p>
@@ -17,6 +19,23 @@
         </button>
     </div>
 </div>
+@if (posts == null)
+{
+    <p>Načítám data...</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var post in posts)
+        {
+            <div class="col-md-4 mb-3">
+                <h2 class="title-0 p-1 text-center text-bg-dark">@post.Title</h2>
+                <p class="post-0 text-center text-bg-light">@((MarkupString)post.Content)</p>
+            </div>
+        }
+    </div>
+}
+
 <div class="footer" tabindex="4">
     <p class="markdown" tabindex="5">© 2025 Jaromír Ihln Všechna práva vyhrazena.</p>
     <p class="markdown" tabindex="6">Ukázka použití ASP.NET Core Blazor WebAssembly.</p>
@@ -26,5 +45,22 @@
     {
         base.OnInitialized();
         // Initialize any data or services needed for the component
+    }
+    private List<Post> posts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await Http.GetFromJsonAsync<PostsRoot>("json/posts.json");
+        posts = data?.Posts;
+    }
+    public class Post
+    {
+        public string Title { get; set; }
+        public string Content { get; set; }
+    }
+
+    public class PostsRoot
+    {
+        public List<Post> Posts { get; set; }
     }
 }

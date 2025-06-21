@@ -1,4 +1,60 @@
 ﻿@page "/about"
+@inject HttpClient Http
 
 <PageTitle>About</PageTitle>
-<h3>About</h3>
+<h3 class="text-center text-bg-info">About</h3>
+<div id="h-image" class="hero-image" tabindex="3">
+    <img src="/images/lucky_jump_w.webp" class="hero-image opacity-0" alt="Hero Image" />
+    <div id="h-text" class="hero-text">
+        <h2 class="font-change">Vývoj v ASP.NET Core <span class="fa fa-film"> </span> </h2>
+        <p>
+            Architektura pro vývoj multiplatformních aplikací a rozhraní API, MVC &#40;Model-View-Controller&#41; a
+            moderních cloudových aplikací.
+        </p>
+        <button id="hero-btn" class="fw-semibold border border-1 border-info">
+            <a href="https://learn.microsoft.com/cs-cz/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0"
+               class="a-in-btn fa fa-windows" target="_blank"> Zjistit více...?</a>
+        </button>
+    </div>
+</div>
+@if (posts == null)
+{
+    <p>Načítám data...</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var post in posts)
+        {
+            <div class="col-md-4 mb-3">
+                <h2 class="title-0 p-1 text-center text-bg-dark">@post.Title</h2>
+                <p class="post-0 text-center text-bg-light">@((MarkupString)post.Content)</p>
+            </div>
+        }
+    </div>
+}
+
+<div class="footer-about" tabindex="4">
+    <p class="markdown" tabindex="5">© 2025 Jaromír Ihln Všechna práva vyhrazena.</p>
+    <p class="markdown" tabindex="6">Ukázka použití ASP.NET Core Blazor WebAssembly.</p>
+</div>
+
+@code {
+    private List<Post> posts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await Http.GetFromJsonAsync<PostsRoot>("json/about.json");
+        posts = data?.Posts;
+    }
+    public class Post
+    {
+        public string Title { get; set; }
+        public string Content { get; set; }
+    }
+
+    public class PostsRoot
+    {
+        public List<Post> Posts { get; set; }
+    }
+}

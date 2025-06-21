@@ -1,6 +1,6 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">BlazorWasm</a>
+        <a class="navbar-brand" href="">Jaromír Ihln</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,7 +16,7 @@
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+                <span class="fa fa-calculator px-2" aria-hidden="true"></span> Counter
             </NavLink>
         </div>
         <div class="nav-item px-3">
@@ -25,15 +25,16 @@
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="reference">
+            <NavLink id="reference-link" class="nav-link" href="reference">
                 <span class="fa fa-book px-2" aria-hidden="true"></span> Reference
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="about">
+            <NavLink id="about-link" class="nav-link" href="about">
                 <span class="fa fa-info px-2" aria-hidden="true"></span> About
             </NavLink>
         </div>
+
     </nav>
 </div>
 

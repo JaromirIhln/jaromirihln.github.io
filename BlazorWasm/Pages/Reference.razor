@@ -1,4 +1,64 @@
 ﻿@page "/reference"
+@inject HttpClient Http
+@using System.Net.Http.Json
 
 <PageTitle>Reference</PageTitle>
-<h3>Reference</h3>
+<h3 class="text-center text-bg-info">Reference</h3>
+<div id="h-image" class="hero-image" tabindex="3">
+    <img src="/images/pustina_w.webp" class="hero-image opacity-0" alt="Hero Image" />
+    <div id="h-text" class="hero-text">
+        <h2 class="font-change">Vývoj v ASP.NET Core <span class="fa fa-film"> </span> </h2>
+        <p>
+            Architektura pro vývoj multiplatformních aplikací a rozhraní API, MVC &#40;Model-View-Controller&#41; a
+            moderních cloudových aplikací.
+        </p>
+        <button id="hero-btn" class="fw-semibold border border-1 border-info">
+            <a href="https://learn.microsoft.com/cs-cz/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0"
+               class="a-in-btn fa fa-windows" target="_blank"> Zjistit více...?</a>
+        </button>
+    </div>
+</div>
+@if (posts == null)
+{
+    <p>Načítám data...</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var post in posts)
+        {
+            <div class="col-md-4 mb-3">
+                <h2 class="title-0 p-1 text-center text-bg-dark">@post.Title</h2>
+                <p class="post-0 text-center text-bg-light">@((MarkupString)post.Content)</p>
+            </div>
+        }
+    </div>
+}
+
+
+<div class="footer-about" tabindex="4">
+    <p class="markdown" tabindex="5">© 2025 Jaromír Ihln Všechna práva vyhrazena.</p>
+    <p class="markdown" tabindex="6">Ukázka použití ASP.NET Core Blazor WebAssembly.</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+@code {
+    private List<Post> posts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await Http.GetFromJsonAsync<PostsRoot>("json/reference.json");
+        posts = data?.Posts;
+    }
+    public class Post
+    {
+        public string Title { get; set; }
+        public string Content { get; set; }
+    }
+
+    public class PostsRoot
+    {
+        public List<Post> Posts { get; set; }
+    }
+}
