@@ -9,11 +9,11 @@
 <h6 class="markdown text-center" tabindex="2">a načítá razor komponenty včetně C# kódů z repozitáře GitHub.</h6>
 <!--Hero imege an sample of W3S-->
 <div id="h-image" class="hero-image h-25" tabindex="3">
-    <img src="/images/wide_home.webp" class="hero-image opacity-0" tabindex="3" />
+    <img src="/images/wide_home.webp" class="hero-image opacity-0" tabindex="4" />
     <div id="h-text" class="hero-text">
         <h2 class="font-change">Vývoj v ASP.NET Core <span class="fa fa-film"> </span> </h2>
         <p>Architektura pro vývoj multiplatformních aplikací a rozhraní API, MVC &#40;Model-View-Controller&#41; a moderních cloudových aplikací.</p>
-        <button id="hero-btn" class="fw-semibold border border-1 border-info">
+        <button id="hero-btn" class="fw-semibold border border-1 border-info" tabindex="5">
             <a href="https://learn.microsoft.com/cs-cz/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0"
                class="a-in-btn fa fa-windows" target="_blank"> Zjistit více...?</a>
         </button>
@@ -28,7 +28,7 @@ else
     <div class="row">
         @foreach (var post in posts)
         {
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-3" tabindex="@posts.IndexOf(post)">
                 <h2 class="title-0 p-1 text-center text-bg-dark">@post.Title</h2>
                 <p class="post-0 text-center text-bg-light">@((MarkupString)post.Content)</p>
             </div>
@@ -36,9 +36,9 @@ else
     </div>
 }
 
-<div class="footer" tabindex="4">
-    <p class="markdown" tabindex="5">© 2025 Jaromír Ihln Všechna práva vyhrazena.</p>
-    <p class="markdown" tabindex="6">Ukázka použití ASP.NET Core Blazor WebAssembly.</p>
+<div class="footer" tabindex="9">
+    <p class="lead" tabindex="10">© 2025 Jaromír Ihln Všechna práva vyhrazena.</p>
+    <p class="lead" tabindex="11">Ukázka použití ASP.NET Core Blazor WebAssembly.</p>
 </div>
 @code {
     protected override void OnInitialized()
