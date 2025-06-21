@@ -2,6 +2,29 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
+<h1 class="text-center text-info" tabindex="0">Vítejte ve webové aplikaci Blazor!</h1>
+<h3 class="markdown text-center" tabindex="1">Webová aplikace,a která hostuje a je nasazena na 'GitHub pages' pomocí GitHub Action,</h3>
+<h6 class="markdown text-center" tabindex="2">a načítá razor komponenty včetně C# kódů z repozitáře GitHub.</h6>
+<!--Hero imege an sample of W3S-->
+<div id="h-image" class="hero-image h-50">
+    <img src="~/images/wide_home.webp" class="hero-image opacity-0" tabindex="3" />
+    <div id="h-text" class="hero-text">
+        <h2 class="font-change">Vývoj v ASP.NET Core <span class="fa fa-film"> </span> </h2>
+        <p>Architektura pro vývoj multiplatformních aplikací a rozhraní API, MVC &#40;Model-View-Controller&#41; a moderních cloudových aplikací.</p>
+        <button id="hero-btn" class="fw-semibold border border-1 border-info">
+            <a href="https://learn.microsoft.com/cs-cz/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0"
+               class="a-in-btn fa fa-windows" target="_blank"> Zjistit více...?</a>
+        </button>
+    </div>
+</div>
+<div class="footer" tabindex="4">
+    <p class="markdown" tabindex="5">© 2025 Jaromír Ihln Všechna práva vyhrazena.</p>
+    <p class="markdown" tabindex="6">Ukázka použití ASP.NET Core Blazor WebAssembly.</p>
+</div>
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        // Initialize any data or services needed for the component
+    }
+}
