@@ -2,15 +2,19 @@
     "posts": [
         {
         "title": "Co zde najdeš",
-        "content": "Vlastně skoro nic &#129323;, ale nezoufej teprve se to tu rozjíždí. Jedná se malý projekt, kterým se snažím o to, aby byl co nejvíce uživatelsky přívětivý což je také podstatou samotného webu. Všechny příspěvky jsou psány v češtině a snažím se je psát tak, aby byly srozumitelné i pro lidi, kteří nemají s programováním žádné zkušenosti."
+        "content": "Vlastně skoro nic &#129323;, ale nezoufej teprve se to tu rozjíždí. Jedná se malý projekt v rámci GitHub pages <span class='fa fa-github'> </span>, kterým se snažím o to, aby byl co nejvíce uživatelsky přívětivý což je také podstatou samotného webu. Všechny příspěvky jsou psány v češtině a snažím se je psát tak, aby byly srozumitelné i pro lidi, kteří nemají s programováním žádné zkušenosti."
         },
         {
         "title": "Ukázky",
-        "content": "Ukázky mé cesty programováním a tvorby webového absahu. Je zde vydět tučným písmem ASP.NET Core MVC, což je framework, který jsem si, ale nevybral pro tento projekt. Ač je to velmi silný nástroj pro tvorbu webových aplikací a já se snažím ho využít naplno, nasazení jen testuji krátkodobě na Azure v rámci 'FreeTier'."
+        "content": "Ukázky mé cesty programováním a tvorby webového absahu. Je zde vydět tučným písmem ASP.NET Core, což je framework, který jsem si vybral pro tento projekt. Je to velmi silný nástroj pro tvorbu webových aplikací a já se snažím ho využít naplno, nasazení nyní testuji v rámci free GitHub pages. Zvolil jsem si Blazor WebAssembly, což je technologie, která umožňuje psát webové aplikace v C# a běží přímo v prohlížeči. To znamená, že nemusím psát JavaScript, což je pro mě velká výhoda. Všechny ukázky jsou dostupné na <a href='https://jaromirihln.github.io'>BlazorWasm</a>."
+        },
+        {
         },
         {
         "title": "Zábava",
-        "content": "Zábava jako taková se spíše skládá z jednoduché stránky (v podobném stylu) na testy znalostí programovacých jazyků a psaní všemi deseti - Testy: <a href='https://mypage.jaraweb.cz/learn/index.html'>Testy <span class='fa fa-book'> </span></a> &#129299; Psaní všemi deseti: <a href='https://mypage.jaraweb.cz/learn/all_then.html'>Psaní všemi deseti <span class='fa fa-keyboard-o'></span></a> &#129299;. Všechny odkazy směřují na můj web(subdomény)."
+        "content": "Zábava jako taková se spíše skládá z jednoduché stránky (v podobném stylu) na testy znalostí programovacých jazyků a psaní všemi deseti - Testy: <a href='https://mypage.jaraweb.cz/learn/index.html'>Testy <span class='fa fa-book'> </span></a> &#129299; Psaní všemi deseti: <a href='https://mypage.jaraweb.cz/learn/all_then.html'>Psaní všemi deseti <span class='fa fa-keyboard-o'></span></a> &#129299;. Všechny odkazy směřují na můj web(subdomény). Zároveň zde najdeš i odkazy na mé další projekty, které jsou v různých fázích vývoje. Některé jsou již hotové, jiné jsou teprve v plenkách. Všechny projekty na tomto webhostingu jsou psány v JavaSriptu."
+        },
+        {
         }
       
     ]
