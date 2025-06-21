@@ -2,7 +2,7 @@
 @inject HttpClient Http
 
 <PageTitle>About</PageTitle>
-<h3 class="text-center text-bg-info" tabindex="0">About</h3>
+<h3 class="text-center text-bg-info p-3" tabindex="0">About</h3>
 <div id="h-image" class="hero-image" tabindex="1">
     <img src="/images/lucky_jump_w.webp" class="hero-image opacity-0" alt="Hero Image" tabindex="2" />
     <div id="h-text" class="hero-text">
@@ -35,8 +35,9 @@ else
 }
 
 <div class="footer-about text-bg-dark" tabindex="7">
-    <p  tabindex="8">© 2025 Jaromír Ihln Všechna práva vyhrazena.</p>
-    <p  tabindex="9">Ukázka použití ASP.NET Core Blazor WebAssembly.</p>
+    <p class="p-2"> © 2025 Copyright <span class="fa fa-refresh"> </span>
+            <a class="text-reset fw-bold" href="https://github.com/JaromirIhln"> Jaromir Ihln - Github</a></p>
+    <p class="fa fa-windows" tabindex="9">Ukázka použití ASP.NET Core Blazor WebAssembly.</p>
 </div>
 
 @code {
