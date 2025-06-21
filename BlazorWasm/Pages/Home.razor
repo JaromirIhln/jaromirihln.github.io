@@ -5,21 +5,27 @@
 <PageTitle>Home</PageTitle>
 
 <h1 class="text-center text-bg-info" tabindex="0">Vítejte ve webové aplikaci Blazor!</h1>
-<h3 class="markdown text-center" tabindex="1">Webová aplikace,a která hostuje a je nasazena na 'GitHub pages' pomocí GitHub Action,</h3>
+<h3 class="markdown text-center" tabindex="1">Webová aplikace,a která hostuje a je nasazena na 'GitHub pages' pomocí
+    GitHub Action,</h3>
 <h6 class="markdown text-center" tabindex="2">a načítá razor komponenty včetně C# kódů z repozitáře GitHub.</h6>
 <!--Hero imege an sample of W3S-->
 <div id="h-image" class="hero-image h-25" tabindex="3">
     <img src="/images/wide_home.webp" class="hero-image opacity-0" tabindex="4" />
     <div id="h-text" class="hero-text">
         <h2 class="font-change">Vývoj v ASP.NET Core <span class="fa fa-film"> </span> </h2>
-        <p>Architektura pro vývoj multiplatformních aplikací a rozhraní API, MVC &#40;Model-View-Controller&#41; a moderních cloudových aplikací.</p>
+        <p>Architektura pro vývoj multiplatformních aplikací a rozhraní API, MVC &#40;Model-View-Controller&#41; a
+            moderních cloudových aplikací.</p>
         <button id="hero-btn" class="fw-semibold border border-1 border-info" tabindex="5">
             <a href="https://learn.microsoft.com/cs-cz/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0"
-               class="a-in-btn fa fa-windows" target="_blank"> Zjistit více...?</a>
+                class="a-in-btn fa fa-windows" target="_blank"> Zjistit více...?</a>
         </button>
     </div>
 </div>
-@if (posts == null)
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+else if (posts == null)
 {
     <p>Načítám data...</p>
 }
@@ -30,11 +36,12 @@ else
         {
             <div class="col-md-4 mb-3" tabindex="@posts.IndexOf(post)">
                 <h2 class="title-0 p-1 text-center text-bg-dark">@post.Title</h2>
-                <p class="post-0 text-center text-bg-light">@((MarkupString)post.Content)</p>
+                <p class="post-0 text-center text-bg-light">@((MarkupString)(post?.Content ?? ""))</p>
             </div>
         }
     </div>
 }
+
 
 <div class="footer" tabindex="9">
     <p class="p-2">
@@ -49,21 +56,34 @@ else
         base.OnInitialized();
         // Initialize any data or services needed for the component
     }
-    private List<Post> posts;
-
+    private List<Post>? posts;
+    private string? errorMessage;
     protected override async Task OnInitializedAsync()
     {
-        var data = await Http.GetFromJsonAsync<PostsRoot>("json/posts.json");
-        posts = data?.Posts;
+        try
+        {
+            var data = await Http.GetFromJsonAsync<PostsRoot>("json/posts.json");
+            posts = data?.Posts;
+        }
+        catch (Exception? ex )
+        {
+            errorMessage = "Chyba při načítání dat: " + ex.Message;
+            // Můžeš přidat logování nebo chybovou hlášku pro uživatele
+            posts = new List<Post>(); // nebo null, podle toho, co preferuješ
+        }
+        {
+            // Můžeš přidat logování nebo chybovou hlášku pro uživatele
+            posts = new List<Post>(); // nebo null, podle toho, co preferuješ
+        }
     }
     public class Post
     {
-        public string Title { get; set; }
-        public string Content { get; set; }
+        public string? Title { get; set; }
+        public string? Content { get; set; }
     }
 
     public class PostsRoot
     {
-        public List<Post> Posts { get; set; }
+        public List<Post>? Posts { get; set; }
     }
 }

@@ -18,7 +18,11 @@
         </button>
     </div>
 </div>
-@if (posts == null)
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+else if (posts == null)
 {
     <p>Načítám data...</p>
 }
@@ -29,7 +33,7 @@ else
         {
             <div class="col-md-4 mb-3" tabindex="@posts.IndexOf(post)">
                 <h2 class="title-0 p-1 text-center text-bg-dark">@post.Title</h2>
-                <p class="post-0 text-center text-bg-light">@((MarkupString)post.Content)</p>
+                <p class="post-0 text-center text-bg-light">@((MarkupString)(post?.Content ?? ""))</p>
             </div>
         }
     </div>
@@ -52,21 +56,34 @@ else
         base.OnInitialized();
         // Initialize any data or services needed for the component
     }
-    private List<Post> posts;
-
+     private List<Post>? posts;
+    private string? errorMessage;
     protected override async Task OnInitializedAsync()
     {
-        var data = await Http.GetFromJsonAsync<PostsRoot>("json/reference.json");
-        posts = data?.Posts;
+        try
+        {
+            var data = await Http.GetFromJsonAsync<PostsRoot>("json/reference.json");
+            posts = data?.Posts;
+        }
+        catch (Exception? ex )
+        {
+            errorMessage = "Chyba při načítání dat: " + ex.Message;
+            // Můžeš přidat logování nebo chybovou hlášku pro uživatele
+            posts = new List<Post>(); // nebo null, podle toho, co preferuješ
+        }
+        {
+            // Můžeš přidat logování nebo chybovou hlášku pro uživatele
+            posts = new List<Post>(); // nebo null, podle toho, co preferuješ
+        }
     }
     public class Post
     {
-        public string Title { get; set; }
-        public string Content { get; set; }
+        public string? Title { get; set; }
+        public string? Content { get; set; }
     }
 
     public class PostsRoot
     {
-        public List<Post> Posts { get; set; }
+        public List<Post>? Posts { get; set; }
     }
 }
