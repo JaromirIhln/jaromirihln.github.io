@@ -60,3 +60,4 @@ Create on wwwroot file named 404.html. It is for copying index.html to the 404.h
 ```
 Or copy contents from static.yml on this project.
 It works beautifully - if you customize the pages.👍😉
+[![Deploy Blazor WASM to GitHub Pages](https://github.com/JaromirIhln/jaromirihln.github.io/actions/workflows/static.yml/badge.svg)](https://github.com/JaromirIhln/jaromirihln.github.io/actions/workflows/static.yml)
