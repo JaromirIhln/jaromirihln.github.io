@@ -36,3 +36,19 @@ Now a folder .github, workflows will be created and inside there will be static.
  <base href="/" />  - # this is okay
 ```
 I hope I didn't forget anything.😉
+# Reload page fix
+Create on wwwroot file named 404.html. It is for copying index.html to the 404.html page - you will be returned to the page you are on - otherwise the status code is 404 page not found.
+```
+- name: Publish Blazor WASM
+  run: dotnet publish WasmApp/WasmApp.csproj -c Release --nologo
+
+- name: Copy index.html to 404.html for SPA fallback
+  run: cp ${{ env.PUBLISH_DIR }}/index.html ${{ env.PUBLISH_DIR }}/404.html
+
+- name: Setup Pages
+  uses: actions/configure-pages@v5
+
+# ... other existings steps (upload, deploy) ...
+```
+Or copy contents from static.yml on this project.
+It works beautifully - if you customize the pages.👍😉
