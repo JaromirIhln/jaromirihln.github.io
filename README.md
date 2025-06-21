@@ -1,7 +1,15 @@
 # jaromirihln.github.io
-Testing the BlazorWebAssembly app deployment on GitHub pages
+Testing the BlazorWebAssembly app deployment on GitHub pages.
+# Official instructions of dotnet
+I followed the official instructions [dotnet/blazor-samples](https://github.com/dotnet/blazor-samples) (author: dotnet). The only change compared to the original is that I deployed the Blazor WebAssembly application directly to the root directory of this repository([Your Name or organization].github.io). I would not like to take credit for anything else. I had to modify some steps and everything that could be created using the CLI.
+The project can also be created in VScode, but you have to pay attention to the individual steps - otherwise the project will fail - that's why I recommend VS2022.
+
+# Start of GitHub pages
+Follow the steps on this page https://pages.github.com/ - just don't create index.html.
+Just create a repository README.md file, which will already be available on your page ([YourName].github.io)
+
 # How to run locally
-Open the solution in Visual Studio and create the BlazorWebAssembly project.
+Open your githup pages repository(this can be done directly from Git) in Visual Studio and create the BlazorWebAssembly project.
 Create with the command line:
 ```bash
 dotnet new blazorwasm -o [YourAppName] -f net9.0 # Not use -n option project name and folder name must be the same
