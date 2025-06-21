@@ -57,7 +57,7 @@ else
     {
         try
         {
-            var data = await Http.GetFromJsonAsync<PostsRoot>("json/posts.json");
+            var data = await Http.GetFromJsonAsync<PostsRoot>("json/about.json");
             posts = data?.Posts;
         }
         catch

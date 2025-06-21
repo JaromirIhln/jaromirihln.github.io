@@ -65,15 +65,9 @@ else
             var data = await Http.GetFromJsonAsync<PostsRoot>("json/posts.json");
             posts = data?.Posts;
         }
-        catch (Exception? ex )
+        catch
         {
-            errorMessage = "Chyba při načítání dat: " + ex.Message;
-            // Můžeš přidat logování nebo chybovou hlášku pro uživatele
-            posts = new List<Post>(); // nebo null, podle toho, co preferuješ
-        }
-        {
-            // Můžeš přidat logování nebo chybovou hlášku pro uživatele
-            posts = new List<Post>(); // nebo null, podle toho, co preferuješ
+            errorMessage = "Nepodařilo se načíst data.";
         }
     }
     public class Post
