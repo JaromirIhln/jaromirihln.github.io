@@ -1,0 +1,1 @@
+[![Deploy Blazor WASM to GitHub Pages](https://github.com/JaromirIhln/jaromirihln.github.io/actions/workflows/static.yml/badge.svg)](https://github.com/JaromirIhln/jaromirihln.github.io/actions/workflows/static.yml)
