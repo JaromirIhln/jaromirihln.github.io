@@ -40,6 +40,12 @@ else
 </div>
 
 @code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        // Initialize any data or services needed for the component
+    }
+
     private List<Post> posts;
 
     protected override async Task OnInitializedAsync()

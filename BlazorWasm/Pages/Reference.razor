@@ -44,6 +44,11 @@ else
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 @code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        // Initialize any data or services needed for the component
+    }
     private List<Post> posts;
 
     protected override async Task OnInitializedAsync()
