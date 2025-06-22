@@ -37,13 +37,7 @@ jobs:
 
       - name: Copy index.html to 404.html for SPA fallback
         run: cp ${{ env.PUBLISH_DIR }}/index.html ${{ env.PUBLISH_DIR }}/404.html
-        # Add step to create NuGet package
-      - name: Pack NuGet package
-        run: dotnet pack BlazorWasm/BlazorWasm.csproj -c Release --output ./nupkg
-
-      # Add step to Push package on NuGet
-      - name: Publish NuGet package
-        run: dotnet nuget push "./nupkg/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
