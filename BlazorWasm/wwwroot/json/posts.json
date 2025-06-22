@@ -9,13 +9,8 @@
         "content": "Ukázky programování a tvorby webového absahu. ASP.NET je nástroj pro tvorbu webových aplikací Blazor, MVC a API. Toto je test nasazení Blazor Web Assembly na GitHub pages.Aplikace Blazor WebAssembly, umožňuje hostovat SPA v C#, která běží přímo z repozitáře v prohlížeči. Celý projekt je dostupný na <a href='https://github.com/JaromirIhln/jaromirihln.github.io'>BlazorWasm</a>."
         },
         {
-        },
-        {
         "title": "Zábava",
         "content": "Zábava jako taková se spíše skládá z jednoduché stránky (v podobném stylu) na testy znalostí programovacých jazyků a psaní všemi deseti - Testy: <a href='https://mypage.jaraweb.cz/learn/index.html'>Testy <span class='fa fa-book'> </span></a> &#129299; Psaní všemi deseti: <a href='https://mypage.jaraweb.cz/learn/all_then.html'>Psaní všemi deseti <span class='fa fa-keyboard-o'></span></a> &#129299;. Všechny odkazy směřují na můj web(subdomény). Zároveň zde najdeš i odkazy na mé další projekty, které jsou v různých fázích vývoje. Některé jsou již hotové, jiné jsou teprve v plenkách. Všechny projekty na tomto webhostingu jsou psány v JavaSriptu."
-        },
-        {
         }
-      
     ]
 }
