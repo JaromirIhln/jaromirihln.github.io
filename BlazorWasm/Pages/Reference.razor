@@ -14,7 +14,7 @@
         </p>
         <button id="hero-btn" class="fw-semibold border border-1 border-info" tabindex="3">
             <a href="https://learn.microsoft.com/cs-cz/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0"
-               class="a-in-btn fa fa-windows" target="_blank"> Zjistit více...?</a>
+                class="a-in-btn fa fa-windows" target="_blank"> Zjistit více...?</a>
         </button>
     </div>
 </div>
@@ -31,7 +31,7 @@ else
     <div class="row">
         @foreach (var post in posts)
         {
-            <div class="col-md-3 mb-3" tabindex="@posts.IndexOf(post)">
+            <div class="col-md-4 mb-3" tabindex="@posts.IndexOf(post)">
                 <h2 class="title-0 p-1 text-center text-bg-dark">@post.Title</h2>
                 <p class="post-0 text-center text-bg-light">@((MarkupString)(post?.Content ?? ""))</p>
             </div>
@@ -56,7 +56,7 @@ else
         base.OnInitialized();
         // Initialize any data or services needed for the component
     }
-     private List<Post>? posts;
+    private List<Post>? posts;
     private string? errorMessage;
     protected override async Task OnInitializedAsync()
     {
