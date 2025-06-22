@@ -1,18 +1,80 @@
 ﻿@page "/counter"
 
-<PageTitle>Counter</PageTitle>
+<h3>Kalkulačka</h3>
 
-<h1>Counter</h1>
+<div class="calculator-box p-3 rounded shadow" style="max-width:320px;">
+    <input @bind="expression" class="form-control mb-2 text-end" placeholder="Zadej výraz" readonly />
 
-<p role="status">Current count: @currentCount</p>
+    <div class="row g-1 mb-1">
+        <button class="btn btn-secondary col" @onclick="() => Add('7')">7</button>
+        <button class="btn btn-secondary col" @onclick="() => Add('8')">8</button>
+        <button class="btn btn-secondary col" @onclick="() => Add('9')">9</button>
+        <button class="btn btn-warning col" @onclick="() => Add('/')">/</button>
+    </div>
+    <div class="row g-1 mb-1">
+        <button class="btn btn-secondary col" @onclick="() => Add('4')">4</button>
+        <button class="btn btn-secondary col" @onclick="() => Add('5')">5</button>
+        <button class="btn btn-secondary col" @onclick="() => Add('6')">6</button>
+        <button class="btn btn-warning col" @onclick="() => Add('*')">*</button>
+    </div>
+    <div class="row g-1 mb-1">
+        <button class="btn btn-secondary col" @onclick="() => Add('1')">1</button>
+        <button class="btn btn-secondary col" @onclick="() => Add('2')">2</button>
+        <button class="btn btn-secondary col" @onclick="() => Add('3')">3</button>
+        <button class="btn btn-warning col" @onclick="() => Add('-')">-</button>
+    </div>
+    <div class="row g-1 mb-1">
+        <button class="btn btn-secondary col" @onclick="() => Add('0')">0</button>
+        <button class="btn btn-secondary col" @onclick="() => Add('.')">.</button>
+        <button class="btn btn-danger col" @onclick="Clear">C</button>
+        <button class="btn btn-warning col" @onclick="() => Add('+')">+</button>
+    </div>
+    <div class="row g-1">
+        <button class="btn btn-success col-12" @onclick="Evaluate">=</button>
+    </div>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    @if (result is not null)
+    {
+        <div class="alert alert-info mt-2">Výsledek: <b>@result</b></div>
+    }
+    @if (error is not null)
+    {
+        <div class="alert alert-danger mt-2">@error</div>
+    }
+</div>
 
 @code {
-    private int currentCount = 0;
+    private string expression = "";
+    private string? result;
+    private string? error;
 
-    private void IncrementCount()
+    private void Add(char value)
     {
-        currentCount++;
+        error = null;
+        result = null;
+        expression += value.ToString();
+    }
+
+    private void Clear()
+    {
+        expression = "";
+        result = null;
+        error = null;
+    }
+
+    private void Evaluate()
+    {
+        error = null;
+        try
+        {
+            var dt = new System.Data.DataTable();
+            var value = dt.Compute(expression, "");
+            result = value?.ToString();
+        }
+        catch
+        {
+            result = null;
+            error = "Neplatný výraz!";
+        }
     }
 }
