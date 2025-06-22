@@ -324,7 +324,12 @@ input[type=submit]:hover {
   position: absolute;
   top: 0;
 }
+.fa-font-size {
+  font-size: 24px;
+  color: #fbfafa;
+  padding: 6px 8px;
 
+}
 /* Add Zoom Animation */
 .animate {
   -webkit-animation: animatezoom 0.6s;
