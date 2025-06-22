@@ -61,3 +61,7 @@ Create on wwwroot file named 404.html. It is for copying index.html to the 404.h
 Or copy contents from static.yml on this project.
 It works beautifully - if you customize the pages.👍😉
 [![Deploy Blazor WASM to GitHub Pages](https://github.com/JaromirIhln/jaromirihln.github.io/actions/workflows/static.yml/badge.svg)](https://github.com/JaromirIhln/jaromirihln.github.io/actions/workflows/static.yml)
+##Updating sample content
+I added components to my Blazor app that represent me. I replaced the Coutner component with a simple calculator with buttons, so you can enter the entire example into the input. I translated the weather into Czech and added examples of updated data starting today for the entire week.
+All components work great, including the gallery (lightbox) and the contact form demo (mail provider -not server). Some pages will take you to my school static website subdomian - [!(https://mypage.jaraweb.cz)], where there are JavaScript applications - thanks for dotne/blazor-samples is it a amazing to way.👍😉👌
+I'm very happy that I found instructions on how to deploy a C# Blazor application on real hosting, I don't mind at all that it's a static SPA - I was mainly interested in the C# language - I have final tests waiting for me in full-stack ASP.NET core MVC, React, Javascript and NodeJS.
