@@ -1,6 +1,8 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Jaromír Ihln</a>
+        <span class="fa-fa-solid fa fa-globe"> </span>>
+        <img src="images/logo.png" alt="Logo" class="logo" />
+        <a class="navbar-brand" href="https://github.com/JaromirIhln/jaromirihln.github.io">Jaromír Ihln</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,7 +18,7 @@
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
-                <span class="fa fa-calculator px-2" aria-hidden="true"></span> Counter
+                <span class="fa fa-calculator px-2 fa-fa-solid" aria-hidden="true"></span> Counter
             </NavLink>
         </div>
         <div class="nav-item px-3">
@@ -26,16 +28,30 @@
         </div>
         <div class="nav-item px-3">
             <NavLink id="reference-link" class="nav-link" href="reference">
-                <span class="fa fa-book px-2" aria-hidden="true"></span> Reference
+                <span class="fa fa-book px-2 fa-fa-solid" aria-hidden="true"></span> Reference
             </NavLink>
         </div>
-        <div class="nav-item px-3">
-            <NavLink id="about-link" class="nav-link" href="about">
-                <span class="fa fa-info px-2" aria-hidden="true"></span> About
-            </NavLink>
+        <button class="dropdown-btn text-bg-dark ms-4 px-4 pe-4"><span class="fa fa-globe"></span> Více
+            <span class="fa fa-caret-down"></span>
+        </button>
+        <div class="dropdown-container text-bg-dark">
+            <a href="https://mypage.jaraweb.cz/learn/index.html" class="ms-1" target="_self"><span
+                    class="fa fa-microchip"><small> IT testy</small></span></a>
+            <a href="https://mypage.jaraweb.cz/learn/all_then.html" class="ms-1" target="_self"><span
+                    class="fa fa-keyboard-o"> <small> Cvičení psaní</small></span> </a>
+            <!-- <a href="#" class="ms-1" onclick="openModal(),closeNavBar()"><span class="fa fa-user"></span> Galerie</a>-->
         </div>
+        <a href="#" onclick="document.getElementById('contact-form').style.display='block',closeNavBar()"><span
+                class="fa fa-envelope-o"> </span> Kontakt</a>
+        <!-- <a href="#">Registrovat</a> -->
 
-    </nav>
+<div class="nav-item px-3">
+    <NavLink id="about-link" class="nav-link" href="about">
+        <span class="fa fa-info px-2" aria-hidden="true"></span> About
+    </NavLink>
+</div>
+
+</nav>
 </div>
 
 @code {
