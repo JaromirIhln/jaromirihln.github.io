@@ -40,9 +40,10 @@
             <a href="https://mypage.jaraweb.cz/learn/all_then.html" class="ms-1" target="_self"><span
                     class="fa fa-keyboard-o"> <small> Cvičení psaní</small></span> </a>
             <!-- <a href="#" class="ms-1" onclick="openModal(),closeNavBar()"><span class="fa fa-user"></span> Galerie</a>-->
-        </div>
-        <a href="#" onclick="document.getElementById('contact-form').style.display='block',closeNavBar()"><span
+         <a href="#" onclick="document.getElementById('contact-form').style.display='block',closeNavBar()"><span
                 class="fa fa-envelope-o"> </span> Kontakt</a>
+        </div>
+       
         <!-- <a href="#">Registrovat</a> -->
 
 <div class="nav-item px-3">
@@ -53,7 +54,46 @@
 
 </nav>
 </div>
+    <!--Contact form as hiden modal-->
+    <div id="contact-form" class="modal">
+        <form class="modal-content animate text-white" method="post" action="mailto:">
+            <span onclick="document.getElementById('contact-form').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+            <div class="container">
+                <label for="uname"><span class="fa fa-user-secret"> </span> Jméno: </label>
+                <input type="text" id="uname" name="name" placeholder="Tvoje jméno..">
 
+                <label for="email"><span class="fa fa-envelope-o"> </span> Email:</label>
+                <input type="text" id="email" name="email" placeholder="Tvůj email..">
+
+                <label for="subject"><span class="fa fa-question-circle-o"> </span> Předmět</label>
+                <input id="subject" name="country" type="text" placeholder="Předmět zprávy..">
+
+
+                <label for="content"><span class="fa fa-commenting-o"> </span> Zpráva:</label>
+                <textarea id="content" name="content" placeholder="Tvoje zpráva.." style="height:200px"></textarea>
+            </div>
+            <div class="container">
+                <button type="button" onclick="document.getElementById('contact-form').style.display='none'"
+                    class="btn btn-danger text-white p-2 rounded-1 me-3"><span class="fa fa-remove"> </span>
+                    Zrušit</button>
+                <a href="mailto:xerox03@seznam.cz" type="submit"
+                    class="btn btn-success text-white p-2 rounded-1">Odeslat <span class="fa fa-send-o"> </span></a>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Inicializace modalu
+        var modal = document.getElementById('contact-form');
+        //Když uživatel klikne kamkoli mimo modal, skryje ho
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
 @code {
     private bool collapseNavMenu = true;
 
