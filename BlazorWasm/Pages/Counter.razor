@@ -6,28 +6,28 @@
     <input @bind="expression" class="form-control mb-2 text-end" placeholder="Zadej výraz" readonly />
 
     <div class="row g-1 mb-1 ms-1 me-1">
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('7')">7</button>
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('8')">8</button>
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('9')">9</button>
-        <button class="btn btn-warning col px-1" @onclick="() => Add('/')">/</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('7')">7</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('8')">8</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('9')">9</button>
+        <button class="btn btn-warning col px-1 ms-1 me-1" @onclick="() => Add('/')">/</button>
     </div>
     <div class="row g-1 mb-1 ms-1 me-1">
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('4')">4</button>
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('5')">5</button>
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('6')">6</button>
-        <button class="btn btn-warning col px-1" @onclick="() => Add('*')">*</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('4')">4</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('5')">5</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('6')">6</button>
+        <button class="btn btn-warning col px-1 ms-1 me-1" @onclick="() => Add('*')">*</button>
     </div>
     <div class="row g-1 mb-1 ms-1 me-1">
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('1')">1</button>
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('2')">2</button>
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('3')">3</button>
-        <button class="btn btn-warning col px-1" @onclick="() => Add('-')">-</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('1')">1</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('2')">2</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('3')">3</button>
+        <button class="btn btn-warning col px-1 ms-1 me-1" @onclick="() => Add('-')">-</button>
     </div>
     <div class="row g-1 mb-1 ms-1 me-1">
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('0')">0</button>
-        <button class="btn btn-secondary col px-1" @onclick="() => Add('.')">.</button>
-        <button class="btn btn-danger col px-1" @onclick="Clear">C</button>
-        <button class="btn btn-warning col px-1" @onclick="() => Add('+')">+</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('0')">0</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('.')">.</button>
+        <button class="btn btn-danger col px-1 ms-1 me-1" @onclick="Clear">C</button>
+        <button class="btn btn-warning col px-1 ms-1 me-1" @onclick="() => Add('+')">+</button>
     </div>
     <div class="row g-1">
         <button class="btn btn-success col-12" @onclick="Evaluate">=</button>
