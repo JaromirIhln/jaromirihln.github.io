@@ -6,7 +6,7 @@
         },
         {
         "title": "Ukázky",
-        "content": "Ukázky mé cesty programováním a tvorby webového absahu. Je zde vydět tučným písmem ASP.NET Core, což je framework, který jsem si vybral pro tento projekt. Je to velmi silný nástroj pro tvorbu webových aplikací a já se snažím ho využít naplno, nasazení nyní testuji v rámci free GitHub pages. Zvolil jsem si Blazor WebAssembly, což je technologie, která umožňuje psát webové aplikace v C# a běží přímo v prohlížeči. To znamená, že nemusím psát JavaScript, což je pro mě velká výhoda. Všechny ukázky jsou dostupné na <a href='https://jaromirihln.github.io'>BlazorWasm</a>."
+        "content": "Ukázky mé cesty programováním a tvorby webového absahu. Je zde vydět tučným písmem ASP.NET Core. Je to velmi silný nástroj pro tvorbu webových aplikací, nyní testuji nasazení v rámci free GitHub pages.Zvolil jsem si Blazor WebAssembly, která umožňuje hostovat SPA aplikaci v C# a běží přímo v prohlížeči. Celý projekt je dostupný na <a href='https://github.com/JaromirIhln/jaromirihln.github.io'>BlazorWasm</a>."
         },
         {
         },
