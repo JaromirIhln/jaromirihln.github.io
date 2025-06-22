@@ -4,10 +4,15 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-  <PackageId>BlazorWasm</PackageId>
-  <Version>1.0.0</Version>
-  <Authors>Jaromir Ihln</Authors>
-  <Description>Demo Blazor WebAssembly app for GitHub Pages deployment.</Description>
+    <PackageId>BlazorWasm</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Jaromir Ihln</Authors>
+    <Company>JaromirIhln</Company>
+    <Description>Demo Blazor WebAssembly app for GitHub Pages deployment.</Description>
+    <RepositoryUrl>https://github.com/jaromirihln/jaromirihln.github.io</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/jaromirihln/jaromirihln.github.io</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
