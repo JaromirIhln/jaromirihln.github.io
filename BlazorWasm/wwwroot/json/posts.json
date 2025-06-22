@@ -6,7 +6,7 @@
         },
         {
         "title": "Ukázky",
-        "content": "Ukázky mé cesty programováním a tvorby webového absahu. Je zde vydět tučným písmem ASP.NET Core. Je to velmi silný nástroj pro tvorbu webových aplikací, nyní testuji nasazení v rámci free GitHub pages.Zvolil jsem si Blazor WebAssembly, která umožňuje hostovat SPA aplikaci v C# a běží přímo v prohlížeči. Celý projekt je dostupný na <a href='https://github.com/JaromirIhln/jaromirihln.github.io'>BlazorWasm</a>."
+        "content": "Ukázky programování a tvorby webového absahu. ASP.NET je nástroj pro tvorbu webových aplikací Blazor, MVC a API. Toto je test nasazení Blazor Web Assembly na GitHub pages.Aplikace Blazor WebAssembly, umožňuje hostovat SPA v C#, která běží přímo z repozitáře v prohlížeči. Celý projekt je dostupný na <a href='https://github.com/JaromirIhln/jaromirihln.github.io'>BlazorWasm</a>."
         },
         {
         },
